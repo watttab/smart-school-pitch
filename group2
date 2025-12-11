@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Transformation Strategy: โรงเรียนสามัคคีธรรมวิทยา</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 
+    Analysis of Source Material:
+    - Source: School Digital Transformation Strategy PDF.
+    - Key Data: 300 Students, 23 Staff, Mix of aging/new devices, Clear goals for LMS & 1:1 ratios.
+    - Narrative Arc: Present current potential -> Identify infrastructure gaps -> Show strategic roadmap -> Visualize impact.
+    - Palette: Vibrant Blue & Orange (Trust + Energy/Creativity).
+    -->
+
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #F3F4F6; /* Light Grey Background */
+            color: #1F2937;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3B82F6; 
+            border-radius: 5px;
+        }
+
+        /* Chart Container Rules - Responsive & Constrained */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Constrain width on large screens */
+            height: 350px;    /* Base height */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        @media (max-width: 640px) {
+            .chart-container {
+                height: 280px; /* Smaller height for mobile */
+            }
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #2563EB, #F97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Card Hover Effect */
+        .hover-lift {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- 
+    PALETTE: Vibrant Professional
+    Primary Blue: #2563EB (Tailwind blue-600)
+    Accent Orange: #F97316 (Tailwind orange-500)
+    Background: #F3F4F6
+    Card Bg: #FFFFFF
+    -->
+
+    <!-- HEADER / HERO SECTION -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-3xl">🏫</span>
+                <h1 class="text-xl font-bold text-gray-800">รร.สามัคคีธรรมวิทยา</h1>
+            </div>
+            <nav class="hidden md:flex space-x-6 text-sm font-semibold text-gray-600">
+                <a href="#overview" class="hover:text-blue-600 transition">ภาพรวม</a>
+                <a href="#infrastructure" class="hover:text-blue-600 transition">ช่องว่างทางดิจิทัล</a>
+                <a href="#strategy" class="hover:text-blue-600 transition">กลยุทธ์</a>
+                <a href="#impact" class="hover:text-blue-600 transition">ผลลัพธ์</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 space-y-16">
+
+        <!-- INTRO: THE HOOK -->
+        <section class="text-center max-w-4xl mx-auto mt-8">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                เส้นทางสู่อนาคตดิจิทัล: <br>
+                <span class="text-gradient">พลิกโฉมโรงเรียนสามัคคีธรรมวิทยา</span>
+            </h1>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                การนำเสนอแผนยุทธศาสตร์เพื่อยกระดับโรงเรียนชุมชนขนาดเล็ก สู่การเป็นต้นแบบการเรียนรู้ดิจิทัลที่ยั่งยืน 
+                ด้วยการใช้ข้อมูลขับเคลื่อน (Data-Driven) และการพัฒนาคน (People-First).
+            </p>
+        </section>
+
+        <!-- SECTION 1: OVERVIEW & STRENGTHS (Inform) -->
+        <!-- Goal: Inform users about the scale and human capital of the school. -->
+        <section id="overview" class="scroll-mt-24">
+            <div class="flex items-center mb-6">
+                <span class="text-4xl mr-4">👥</span>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800">ศักยภาพบุคลากรและผู้เรียน</h2>
+                    <p class="text-gray-500">รากฐานที่สำคัญที่สุดของการเปลี่ยนแปลงคือ "คน" เรามีทีมงานที่พร้อมรับการพัฒนา</p>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <!-- Card 1 -->
+                <div class="bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl p-6 text-white shadow-lg hover-lift">
+                    <div class="text-3xl mb-2">🎓</div>
+                    <div class="text-4xl font-bold mb-1">300</div>
+                    <div class="text-blue-100">นักเรียน (อ.1 - ป.6)</div>
+                    <div class="mt-2 text-xs bg-blue-800 bg-opacity-30 inline-block px-2 py-1 rounded">เป้าหมายหลัก</div>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white rounded-xl p-6 border-l-4 border-orange-500 shadow-md hover-lift">
+                    <div class="text-3xl mb-2">👩‍🏫</div>
+                    <div class="text-4xl font-bold text-gray-800 mb-1">23</div>
+                    <div class="text-gray-500">บุคลากรทั้งหมด</div>
+                    <p class="text-xs text-gray-400 mt-2">รวม ผู้บริหาร, ครูประจำชั้น, ครูพิเศษ</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white rounded-xl p-6 border-l-4 border-blue-500 shadow-md hover-lift">
+                    <div class="text-3xl mb-2">💻</div>
+                    <div class="text-4xl font-bold text-gray-800 mb-1">1</div>
+                    <div class="text-gray-500">เจ้าหน้าที่ ICT</div>
+                    <p class="text-xs text-gray-400 mt-2">กำลังสำคัญในการดูแลระบบ</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-white rounded-xl p-6 border-l-4 border-green-500 shadow-md hover-lift">
+                    <div class="text-3xl mb-2">🚀</div>
+                    <div class="text-4xl font-bold text-gray-800 mb-1">100%</div>
+                    <div class="text-gray-500">ความพร้อมทางใจ</div>
+                    <p class="text-xs text-gray-400 mt-2">มุ่งมั่นสู่ Digital Transformation</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: INFRASTRUCTURE GAP (Compare/Change) -->
+        <!-- Goal: Compare current resources vs. needs. Justification: Bar charts allow easy comparison of categories. -->
+        <section id="infrastructure" class="scroll-mt-24">
+            <div class="flex items-center mb-6">
+                <span class="text-4xl mr-4">📊</span>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800">โครงสร้างพื้นฐาน: ความท้าทายปัจจุบัน</h2>
+                    <p class="text-gray-500">เรามีอุปกรณ์พื้นฐาน แต่ยังขาดความเสถียรและความครอบคลุมเพื่อการเรียนรู้ที่มีประสิทธิภาพสูงสุด</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Left: Device Distribution Chart -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold text-gray-700 mb-4 border-b pb-2">สัดส่วนอุปกรณ์ดิจิทัล (Current Assets)</h3>
+                    <p class="text-sm text-gray-500 mb-4">อุปกรณ์ส่วนใหญ่เน้นไปที่นักเรียน (65%) แต่คอมพิวเตอร์เริ่มมีสภาพเก่า (อายุ 3-6 ปี)</p>
+                    
+                    <div class="chart-container">
+                        <canvas id="deviceChart"></canvas>
+                    </div>
+                    
+                    <div class="mt-4 grid grid-cols-2 gap-2 text-center text-sm">
+                        <div class="bg-blue-50 rounded p-2 text-blue-800 font-bold">คอมพิวเตอร์รวม: 40 เครื่อง</div>
+                        <div class="bg-orange-50 rounded p-2 text-orange-800 font-bold">แท็บเล็ต: 30 เครื่อง</div>
+                    </div>
+                </div>
+
+                <!-- Right: Resource Status (Radar/Bar) -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold text-gray-700 mb-4 border-b pb-2">สถานะความพร้อมของระบบ</h3>
+                    <p class="text-sm text-gray-500 mb-4">การประเมินคุณภาพโครงสร้างพื้นฐานปัจจุบันเทียบกับเป้าหมายมาตรฐาน</p>
+                    
+                    <div class="chart-container">
+                        <canvas id="statusChart"></canvas>
+                    </div>
+
+                    <div class="mt-4 p-3 bg-red-50 border border-red-200 rounded text-sm text-red-600">
+                        <strong>⚠️ Critical Gap:</strong> อินเทอร์เน็ตมีความเร็ว 200Mbps แต่การครอบคลุมพื้นที่ (Coverage) ยังไม่ทั่วถึงห้องเรียน
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: STRATEGIC BLUEPRINT (Organize/Process) -->
+        <!-- Goal: Organize the transformation steps. Justification: Vertical Timeline (HTML/Tailwind) is best for linear processes (NO SVG/Mermaid). -->
+        <section id="strategy" class="scroll-mt-24 bg-blue-900 rounded-2xl p-8 text-white shadow-2xl relative overflow-hidden">
+            <!-- Background Decoration -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 transform translate-x-1/2 -translate-y-1/2"></div>
+
+            <div class="relative z-10 text-center mb-10">
+                <h2 class="text-3xl font-bold mb-2">🗺️ Strategic Blueprint: แผนยุทธศาสตร์</h2>
+                <p class="text-blue-200">โรดแมปสู่การเป็นโรงเรียนต้นแบบดิจิทัล</p>
+            </div>
+
+            <!-- Timeline Container -->
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Vertical Line -->
+                <div class="absolute left-4 md:left-1/2 top-0 h-full w-1 bg-blue-400 transform -translate-x-1/2 hidden md:block"></div>
+                
+                <!-- Step 1 -->
+                <div class="flex flex-col md:flex-row items-center mb-12 relative">
+                    <div class="w-full md:w-1/2 md:pr-8 text-left md:text-right order-2 md:order-1">
+                        <h3 class="text-xl font-bold text-orange-400">Phase 1: Foundation</h3>
+                        <p class="text-sm text-blue-100 mt-1">อัปเกรดโครงสร้างพื้นฐาน อินเทอร์เน็ตครอบคลุม 100%</p>
+                    </div>
+                    <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-orange-500 rounded-full border-4 border-blue-900 z-10 flex items-center justify-center font-bold text-xs order-1 md:order-2 mb-4 md:mb-0">1</div>
+                    <div class="w-full md:w-1/2 md:pl-8 order-3">
+                        <div class="bg-blue-800 p-4 rounded-lg shadow-lg border border-blue-700">
+                            <ul class="text-sm space-y-2">
+                                <li>✅ ขยายจุดกระจายสัญญาณ WiFi</li>
+                                <li>✅ ซ่อมบำรุงคอมพิวเตอร์เดิม 40 เครื่อง</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex flex-col md:flex-row items-center mb-12 relative">
+                    <div class="w-full md:w-1/2 md:pr-8 text-left md:text-right order-2 md:order-1">
+                        <div class="bg-blue-800 p-4 rounded-lg shadow-lg border border-blue-700">
+                            <ul class="text-sm space-y-2">
+                                <li>✅ อบรมครูสู่ Digital Educator</li>
+                                <li>✅ นำร่องใช้ LMS (Google Workspace)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-orange-500 rounded-full border-4 border-blue-900 z-10 flex items-center justify-center font-bold text-xs order-1 md:order-2 mb-4 md:mb-0">2</div>
+                    <div class="w-full md:w-1/2 md:pl-8 order-3">
+                        <h3 class="text-xl font-bold text-orange-400">Phase 2: Enablement</h3>
+                        <p class="text-sm text-blue-100 mt-1">พัฒนาบุคลากร และเริ่มใช้แพลตฟอร์มการสอน</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex flex-col md:flex-row items-center relative">
+                    <div class="w-full md:w-1/2 md:pr-8 text-left md:text-right order-2 md:order-1">
+                        <h3 class="text-xl font-bold text-orange-400">Phase 3: Transformation</h3>
+                        <p class="text-sm text-blue-100 mt-1">เป้าหมายสูงสุด: 1:1 Teacher Devices & Smart Classrooms</p>
+                    </div>
+                    <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-white rounded-full border-4 border-blue-900 z-10 flex items-center justify-center font-bold text-xs text-blue-900 order-1 md:order-2 mb-4 md:mb-0">3</div>
+                    <div class="w-full md:w-1/2 md:pl-8 order-3">
+                        <div class="bg-white text-blue-900 p-4 rounded-lg shadow-lg border border-blue-200">
+                            <ul class="text-sm space-y-2 font-semibold">
+                                <li>🏆 Smart TV ทุกห้องเรียน</li>
+                                <li>🏆 การใช้งาน LMS > 80%</li>
+                                <li>🏆 Data-Driven School Management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: IMPACT & ROI (Compare/Inform) -->
+        <!-- Goal: Show potential outcomes. Justification: Mixed charts (Doughnut for targets, Cards for benefits). -->
+        <section id="impact" class="scroll-mt-24">
+            <div class="flex items-center mb-6">
+                <span class="text-4xl mr-4">🎯</span>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800">ผลลัพธ์ที่คาดหวัง</h2>
+                    <p class="text-gray-500">ความคุ้มค่าของการลงทุน เพื่อการศึกษาที่ยั่งยืน</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- KPI Chart -->
+                <div class="bg-white p-6 rounded-xl shadow-md lg:col-span-1">
+                    <h4 class="font-bold text-gray-700 text-center mb-4">เป้าหมายการใช้งานดิจิทัล (Target KPIs)</h4>
+                    <div class="chart-container" style="height: 250px;">
+                        <canvas id="targetChart"></canvas>
+                    </div>
+                    <p class="text-center text-xs text-gray-500 mt-2">เป้าหมาย: ครูและนักเรียนใช้งานแพลตฟอร์มหลักอย่างสม่ำเสมอ</p>
+                </div>
+
+                <!-- Impact Cards Grid -->
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Student Benefit -->
+                    <div class="bg-blue-50 p-5 rounded-lg border border-blue-100">
+                        <h5 class="font-bold text-blue-700 flex items-center"><span class="text-xl mr-2">👶</span> สำหรับนักเรียน</h5>
+                        <ul class="text-sm text-gray-600 mt-2 list-disc list-inside space-y-1">
+                            <li>มีทักษะแห่งอนาคต (Future Skills)</li>
+                            <li>ลดความเหลื่อมล้ำ เข้าถึงแหล่งเรียนรู้ทั่วโลก</li>
+                            <li>เรียนรู้ผ่านสื่อ Interactive ที่ทันสมัย</li>
+                        </ul>
+                    </div>
+                    <!-- Teacher Benefit -->
+                    <div class="bg-orange-50 p-5 rounded-lg border border-orange-100">
+                        <h5 class="font-bold text-orange-700 flex items-center"><span class="text-xl mr-2">👩‍🏫</span> สำหรับครู</h5>
+                        <ul class="text-sm text-gray-600 mt-2 list-disc list-inside space-y-1">
+                            <li>พัฒนาสู่การเป็น Digital Educator</li>
+                            <li>ลดภาระงานเอกสาร ด้วยระบบอัตโนมัติ</li>
+                            <li>มีเวลาใส่ใจนักเรียนรายบุคคลมากขึ้น</li>
+                        </ul>
+                    </div>
+                    <!-- School Benefit -->
+                    <div class="bg-gray-50 p-5 rounded-lg border border-gray-200 md:col-span-2">
+                        <h5 class="font-bold text-gray-700 flex items-center"><span class="text-xl mr-2">🏫</span> สำหรับโรงเรียน</h5>
+                        <p class="text-sm text-gray-600 mt-2">
+                            เป็น "โรงเรียนต้นแบบดิจิทัลขนาดเล็ก" ที่บริหารจัดการด้วยข้อมูล (Data-Driven Management) สามารถขยายผลโมเดลนี้ไปยังโรงเรียนชุมชนอื่นๆ ได้
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER / CTA -->
+        <footer class="bg-gray-800 text-white py-12 rounded-t-3xl mt-12 text-center">
+            <h2 class="text-2xl font-bold mb-4">มาร่วมสร้างสะพานสู่อนาคตการศึกษาไทย</h2>
+            <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+                การลงทุนในวันนี้ คือการสร้างผู้เรียนที่มีคุณภาพสำหรับอนาคตของชาติ <br>
+                ร่วมเป็นส่วนหนึ่งของการเปลี่ยนแปลงที่โรงเรียนสามัคคีธรรมวิทยา
+            </p>
+            <div class="inline-flex space-x-4">
+                <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105">
+                    สนับสนุนโครงการ
+                </button>
+                <button class="bg-transparent border border-gray-500 hover:border-white text-gray-300 hover:text-white font-bold py-3 px-8 rounded-full transition">
+                    ติดต่อสอบถาม
+                </button>
+            </div>
+            <p class="text-xs text-gray-600 mt-12">© 2024 Samakkhi Tham Wittaya School Digital Strategy.</p>
+        </footer>
+
+    </main>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // --- UTILITY: Label Wrapper for Chart.js (Strict 16-char limit) ---
+        function wrapLabel(label) {
+            if (typeof label !== 'string' || label.length <= 16) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + 1 + words[i].length <= 16) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // --- COMMON CHART OPTIONS ---
+        const commonOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: { family: "'Prompt', sans-serif", size: 12 },
+                        padding: 20
+                    }
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(31, 41, 55, 0.9)',
+                    titleFont: { family: "'Prompt', sans-serif", size: 14 },
+                    bodyFont: { family: "'Prompt', sans-serif", size: 13 },
+                    padding: 12,
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            } else {
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        // --- CHART 1: DEVICE DISTRIBUTION (Doughnut) ---
+        const ctxDevice = document.getElementById('deviceChart').getContext('2d');
+        const deviceData = {
+            labels: ['คอมพิวเตอร์นักเรียน', 'คอมพิวเตอร์ครู', 'แท็บเล็ตนักเรียน'].map(wrapLabel),
+            datasets: [{
+                data: [25, 15, 30], // Data inferred from PDF (Total 40 PCs: 25 student/15 teacher approx + 30 tablets)
+                backgroundColor: [
+                    '#3B82F6', // Blue-500
+                    '#F97316', // Orange-500
+                    '#93C5FD'  // Blue-300
+                ],
+                borderWidth: 0,
+                hoverOffset: 4
+            }]
+        };
+        new Chart(ctxDevice, {
+            type: 'doughnut',
+            data: deviceData,
+            options: {
+                ...commonOptions,
+                cutout: '60%',
+                plugins: {
+                    ...commonOptions.plugins,
+                    legend: { position: 'right' } // Legend on right for doughnut
+                }
+            }
+        });
+
+        // --- CHART 2: INFRASTRUCTURE STATUS (Bar - Comparative) ---
+        const ctxStatus = document.getElementById('statusChart').getContext('2d');
+        const statusData = {
+            labels: ['ความเร็วเน็ต (Speed)', 'ความครอบคลุม (Coverage)', 'สภาพอุปกรณ์ (Condition)', 'ความพร้อมครู (Skills)'].map(wrapLabel),
+            datasets: [
+                {
+                    label: 'สถานะปัจจุบัน (Current)',
+                    data: [80, 40, 50, 65], // Estimated scores based on "Moderate condition", "Spotty coverage", "200Mbps(High)"
+                    backgroundColor: '#9CA3AF', // Gray
+                    borderRadius: 4
+                },
+                {
+                    label: 'เป้าหมาย (Target)',
+                    data: [100, 100, 90, 95],
+                    backgroundColor: '#2563EB', // Blue
+                    borderRadius: 4
+                }
+            ]
+        };
+        new Chart(ctxStatus, {
+            type: 'bar',
+            data: statusData,
+            options: {
+                ...commonOptions,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: { callback: (val) => val + '%' }
+                    }
+                }
+            }
+        });
+
+        // --- CHART 3: TARGET KPIs (Pie) ---
+        const ctxTarget = document.getElementById('targetChart').getContext('2d');
+        const targetData = {
+            labels: ['LMS Adoption', 'Traditional Methods'].map(wrapLabel),
+            datasets: [{
+                data: [80, 20], // Goal: >80% adoption
+                backgroundColor: [
+                    '#10B981', // Green for Success/Goal
+                    '#E5E7EB'  // Light Gray
+                ],
+                borderWidth: 0
+            }]
+        };
+        new Chart(ctxTarget, {
+            type: 'pie',
+            data: targetData,
+            options: {
+                ...commonOptions,
+                plugins: {
+                    ...commonOptions.plugins,
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
